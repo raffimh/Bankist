@@ -90,3 +90,20 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+
+const eurToUsd = 1.1;
+
+const movementsUSD = movements.map(move => move * eurToUsd);
+
+console.log(movements);
+console.log(movementsUSD);
+
+const movementsDescription = movements.map((mov, i, arr) => {
+  if (mov > 0) {
+    return `Movements ${1 + i}: You deposited ${mov}`;
+  } else {
+    return `Movements ${1 + i}: You withdrew ${Math.abs(mov)}`;
+  }
+});
+
+console.log(movementsDescription);
