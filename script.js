@@ -77,10 +77,6 @@ const displayMovements = function (movements) {
 };
 displayMovements(account1.movements);
 
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// LECTURES
-
 const currencies = new Map([
   ['USD', 'United States dollar'],
   ['EUR', 'Euro'],
