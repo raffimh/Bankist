@@ -90,7 +90,6 @@ const createUsernames = function (accs) {
 };
 
 createUsernames(accounts);
-console.log(accounts);
 
 const currencies = new Map([
   ['USD', 'United States dollar'],
@@ -106,9 +105,6 @@ const eurToUsd = 1.1;
 
 const movementsUSD = movements.map(move => move * eurToUsd);
 
-console.log(movements);
-console.log(movementsUSD);
-
 const movementsDescription = movements.map(
   (mov, i) =>
     `Movements ${1 + i}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
@@ -120,12 +116,9 @@ const deposits = movements.filter(function (mov) {
   return mov > 0;
 });
 
-console.log(movements);
-console.log(deposits);
-
 const depositsFor = [];
 for (const mov of movements) if (mov > 0) depositsFor.push(mov);
-console.log(depositsFor);
 
 const withdrawals = movements.filter(mov => mov < 0);
-console.log(withdrawals);
+
+console.log(movements);
