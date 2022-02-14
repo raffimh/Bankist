@@ -79,6 +79,12 @@ const displayMovements = function (movements) {
 // Computing Usernames with map
 displayMovements(account1.movements);
 
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+calcDisplayBalance(account1.movements);
+
 const createUsernames = function (accs) {
   accs.forEach(function (acc) {
     acc.username = acc.owner
@@ -122,3 +128,8 @@ for (const mov of movements) if (mov > 0) depositsFor.push(mov);
 const withdrawals = movements.filter(mov => mov < 0);
 
 console.log(movements);
+
+const balance = movements.reduce((acc, cur) => acc + cur, 0);
+
+let balance2 = 0;
+for (const mov of movements) balance2 += mov;
